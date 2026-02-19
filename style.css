@@ -1,0 +1,170 @@
+/* --- Variables y Reset --- */
+:root {
+    /* Paleta de azules. ¡Cámbialos si quieres otro tono! */
+    --bg-gradient-start: #0f172a; /* Azul muy oscuro (casi negro) */
+    --bg-gradient-end: #1e3a8a;   /* Azul intenso */
+    --text-color: #e2e8f0;        /* Blanco roto para texto */
+    --heading-color: #ffffff;     /* Blanco puro para títulos */
+    --card-bg: rgba(255, 255, 255, 0.05); /* Fondo semitransparente para tarjetas */
+    --accent-color: #38bdf8;      /* Azul cián brillante para destacar */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Usamos la fuente de Google */
+    /* El fondo azul en gradiente */
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+    padding: 2rem 1rem;
+}
+
+/* --- Layout Principal --- */
+.container {
+    max-width: 900px; /* Ancho máximo para que no se desparrame en pantallas grandes */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* --- Sección Hero (Nombre) --- */
+.hero {
+    padding: 4rem 0;
+    text-align: left;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--heading-color);
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: var(--accent-color); /* Destaca tu nombre en azul brillante */
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.bio {
+    font-size: 1.1rem;
+    max-width: 600px;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Botón de llamada a la acción */
+.btn-cta {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--bg-gradient-start);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    background-color: white;
+}
+
+/* --- Sección de Proyectos --- */
+.projects-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Línea separadora sutil */
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 2rem;
+}
+
+/* Grid para los proyectos (Responsive) */
+.projects-grid {
+    display: grid;
+    /* Automáticamente crea columnas de mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjetas de Proyecto */
+.project-card {
+    background-color: var(--card-bg); /* Fondo azul oscuro translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent-color); /* Borde brillante al pasar el ratón */
+    transform: translateY(-3px);
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Etiquetas de tecnología */
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    font-size: 0.8rem;
+    background-color: rgba(56, 189, 248, 0.1); /* Azul brillante muy transparente */
+    color: var(--accent-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+footer a { color: var(--text-color); }
+
+
+/* --- Ajustes para móviles --- */
+@media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.4rem; }
+    .hero { padding: 2rem 0; }
+}
