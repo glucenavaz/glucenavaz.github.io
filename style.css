@@ -80,7 +80,63 @@ h2 {
     background-color: white;
 }
 
-/* --- Sección de Proyectos --- */
+/* --- Sección Universitaria (Destacada) --- */
+.university-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.featured-repo-card {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(30, 58, 138, 0.2));
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-repo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.repo-content h4 {
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    margin-bottom: 0.8rem;
+}
+
+.repo-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Botón especial para el repositorio de la carrera */
+.btn-repo {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    white-space: nowrap; /* Evita que el texto del botón se parta en dos líneas */
+}
+
+.btn-repo:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-gradient-start);
+}
+
+/* --- Sección de Proyectos Personales --- */
 .projects-section {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -161,8 +217,15 @@ footer {
 }
 footer a { color: var(--text-color); }
 
-
 /* --- Ajustes para móviles --- */
+@media (max-width: 768px) {
+    /* Tarjeta destacada apilada en pantallas medianas/pequeñas */
+    .featured-repo-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 @media (max-width: 600px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.4rem; }
